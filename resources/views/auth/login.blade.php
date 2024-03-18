@@ -8,8 +8,11 @@
     <h2>Inicia Sesión con tus credenciales</h2>
   </div>
   <form class="formulario-login" method="post" action="{{route("login")}}">
+    @if (session("message"))
+        <p class="alerta error">{{session("message")}}</p>
+    @endif
     @error('password')
-      <div class="alerta error">{{$message}}</div>
+      <p class="alerta error">{{$message}}</p>
     @enderror
     @error('email')
         <p class="alerta error">{{$message}}</p>

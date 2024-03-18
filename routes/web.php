@@ -1,11 +1,15 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\OrganizerController;
+use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\RegisterController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +35,10 @@ Route::get('/login', [LoginController::class, "index"])->name("login");
 Route::post('/login', [LoginController::class, "store"])->name("login");
 Route::get('/register', [RegisterController::class, "index"])->name("registro");
 Route::post('/register', [RegisterController::class, "store"])->name("registro");
+Route::post('/logout', [LogoutController::class, "store"])->name("logout");
 
 // Admin
-Route::get("/admin", [AdminController::class, "index"])->name("admin");
+Route::get("/dashboard", [AdminController::class, "index"])->name("admin");
+Route::get("/dashboard/events", [EventController::class, "index"])->name("admin.eventos");
+Route::get("/dashboard/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
+Route::get("/dashboard/parking", [ParkingController::class, "index"])->name("admin.parking");

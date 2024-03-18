@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('titulo')
-    Dashboard
+    Administración de Eventos
 @endsection
 @section('admin-content')
-    <h1>Panel de Administración</h1>
+    <h1>Eventos</h1>
+    
 @endsection
