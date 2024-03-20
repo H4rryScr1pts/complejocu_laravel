@@ -31,7 +31,7 @@
         <input type="submit" value="Iniciar Sesión" class="boton-azul">
       </div>
       <div class="login-enlace">
-        <a href="/crear-cuenta" class="e-1">¿No tienes cuenta? Crear una</a>
+        <a href="{{route("registro")}}" class="e-1">¿No tienes cuenta? Crear una</a>
         <a href="/recuperar-password" class="e-2">¿Olvidaste tu password?</a>
       </div>
     </fieldset>

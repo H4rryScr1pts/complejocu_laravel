@@ -41,4 +41,7 @@ Route::post('/logout', [LogoutController::class, "store"])->name("logout");
 Route::get("/dashboard", [AdminController::class, "index"])->name("admin");
 Route::get("/dashboard/events", [EventController::class, "index"])->name("admin.eventos");
 Route::get("/dashboard/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
+Route::get("/dashboard/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
+Route::post("/dashboard/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
+Route::post("/dashboard/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
 Route::get("/dashboard/parking", [ParkingController::class, "index"])->name("admin.parking");
