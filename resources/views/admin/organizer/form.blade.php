@@ -1,3 +1,4 @@
+<input type="hidden" name="id" value="{{$organizer->id ?? ""}}">
 <div>
   <label for="name">Nombre</label>
   @error("name")
@@ -8,7 +9,7 @@
     name="name" 
     id="name" 
     placeholder="Nombre del Organizador" 
-    value="{{old("name")}}">
+    value="{{$organizer->name ?? old("name")}}">
 </div>
 <div>
   <label for="last_name">Apellido</label>
@@ -20,7 +21,7 @@
     name="last_name" 
     id="last_name" 
     placeholder="Apllido del Organizador" 
-    value="{{old("last_name")}}">
+    value="{{$organizer->last_name ?? old("last_name")}}">
 </div>
 <div>
   <label for="telephone">Telefono</label>
@@ -32,7 +33,7 @@
     name="telephone" 
     id="telephone" 
     placeholder="No° de teléfono del Organizador" 
-    value="{{old("telephone")}}">
+    value="{{$organizer->telephone ?? old("telephone")}}">
 </div>
 <div>
   <label for="email">Correo Electrónico</label>
@@ -44,5 +45,5 @@
     name="email" 
     id="email" 
     placeholder="Correo electrónico del Organizador" 
-    value="{{old("email")}}">
+    value="{{$organizer->email ?? old("email")}}">
 </div>

@@ -38,10 +38,12 @@ Route::post('/register', [RegisterController::class, "store"])->name("registro")
 Route::post('/logout', [LogoutController::class, "store"])->name("logout");
 
 // Admin
-Route::get("/dashboard", [AdminController::class, "index"])->name("admin");
-Route::get("/dashboard/events", [EventController::class, "index"])->name("admin.eventos");
-Route::get("/dashboard/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
-Route::get("/dashboard/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
-Route::post("/dashboard/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
-Route::post("/dashboard/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
-Route::get("/dashboard/parking", [ParkingController::class, "index"])->name("admin.parking");
+Route::get("/admin", [AdminController::class, "index"])->name("admin");
+Route::get("/admin/events", [EventController::class, "index"])->name("admin.eventos");
+Route::get("/admin/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
+Route::get("/admin/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
+Route::post("/admin/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
+Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class, "edit"])->name("admin.organizadores.edit");
+Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_store"])->name("admin.organizadores.edit.store");
+Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
+Route::get("/admin/parking", [ParkingController::class, "index"])->name("admin.parking");

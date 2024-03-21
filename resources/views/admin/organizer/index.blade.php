@@ -4,12 +4,17 @@
 @endsection
 @section('admin-content')
     <h1>Organizadores</h1>
-    <a href="{{route("admin.organizadores.create")}}">Añadir Organizador</a>
-    @if (session("message-delete"))
-        <p class="alerta exito">{{session("message-delete")}}</p>
-    @endif
+    <div>
+        <a href="{{route("admin.organizadores.create")}}">Añadir Organizador</a>
+    </div>
     @if (session("message"))
         <p class="alerta exito">{{session("message")}}</p>
+    @endif
+    @if (session("message-edit"))
+        <p class="alerta exito">{{session("message-edit")}}</p>
+    @endif
+    @if (session("message-delete"))
+        <p class="alerta exito">{{session("message-delete")}}</p>
     @endif
     @if ($organizers)
     <table>
@@ -31,7 +36,7 @@
                     <td>{{$organizer->email}}</td>
                     <td>
                         <div>
-                            <a href="">Editar</a>
+                            <a href="{{route("admin.organizadores.edit", $organizer->id)}}">Editar</a>
                             <form action="{{route("admin.organizadores.delete")}}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$organizer->id}}">
