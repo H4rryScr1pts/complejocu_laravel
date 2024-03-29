@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <link rel="website icon" href="/build/img/logo.png">
-  <link rel="stylesheet" href="/build/css/app.css">
+  {{-- <link rel="stylesheet" href="{{asset("css/app.css")}}"> --}}
+  @vite("resources/css/app.css")
   <title>
     Complejo CU | @yield("titulo")
   </title>
