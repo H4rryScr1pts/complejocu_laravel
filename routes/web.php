@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LogoutController;
@@ -40,10 +41,24 @@ Route::post('/logout', [LogoutController::class, "store"])->name("logout");
 // Admin
 Route::get("/admin", [AdminController::class, "index"])->name("admin");
 Route::get("/admin/events", [EventController::class, "index"])->name("admin.eventos");
+
+// Events
+Route::get("/addmin/events/create", [EventController::class, "create"])->name("admin.eventos.create");
+Route::post("/admin/events/create", [EventController::class, "store"])->name("admin.event.store");
+
+// Organizers
 Route::get("/admin/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
 Route::get("/admin/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
 Route::post("/admin/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
 Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class, "edit"])->name("admin.organizadores.edit");
 Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_store"])->name("admin.organizadores.edit.store");
 Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
+
+// Parking
 Route::get("/admin/parking", [ParkingController::class, "index"])->name("admin.parking");
+
+// Images
+Route::post("/images", [ImageController::class, "store"])->name("image.store");
+
+// Profile
+Route::get("/profile", []);

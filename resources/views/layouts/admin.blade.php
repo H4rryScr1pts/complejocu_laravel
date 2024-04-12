@@ -4,18 +4,14 @@
   <h1>Complejo Cultural</h1></div>
   <div class="saludo">
     @auth
-      <p>Hola: <span>{{auth()->user()->name . " " . auth()->user()->last_name}}</span></p>
+      <p>Hola: <b>{{auth()->user()->name . " " . auth()->user()->last_name}}</b></p>
       <form action="{{route("logout")}}" method="POST"></div>
         @csrf
         <button class="button" type="submit">Cerrar Sesión</button>
       </form>
     @endauth
   </div>
-  <!--Dashboard aquí -->
-  </div>
-  <main>
-    @yield('admin-content')
-  </main>
+  
 </div>
 <body class="dashboard">
   <div class="dashboard__grid">
@@ -34,9 +30,21 @@
       </span>
     </a>
     <a href="{{route("admin.organizadores")}}" class="dashboard__enlace ">
-      <i class="fa-solid fa-users dashboard__icono"></i>
+      <i class="fa-solid fa-user-tie dashboard__icono"></i>
       <span class="dashboard__menu-texto">
         Organizadores 
+      </span>
+    </a>
+    <a href="{{route("admin.organizadores")}}" class="dashboard__enlace ">
+      <i class="fa-solid fa-users dashboard__icono"></i>
+      <span class="dashboard__menu-texto">
+        Usuarios 
+      </span>
+    </a>
+    <a href="/admin/perfil" class="dashboard__enlace ">
+      <i class="fa-solid fa-clipboard dashboard__icono"></i>
+      <span class="dashboard__menu-texto">
+        Reportes
       </span>
     </a>
     <a href="/admin/perfil" class="dashboard__enlace ">
@@ -48,6 +56,9 @@
   </nav>
 </aside> 
   </div>
+  </div>  <h1>
+    @yield('admin-content')
+</h1>
   <script src="/build/js/bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

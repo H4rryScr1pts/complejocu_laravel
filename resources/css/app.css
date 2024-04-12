@@ -1787,7 +1787,8 @@ body {
 
 @media (min-width: 768px) {
     .dashboard__form {
-        margin-top: 0;
+        text-align: center;
+        flex-direction: column;
     }
 }
 
