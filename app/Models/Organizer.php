@@ -16,4 +16,8 @@ class Organizer extends Model
         'telephone',
         'email',
     ];
+
+    public function event() {
+        return $this->hasOne(Event::class, "organizer_id");
+    }
 }

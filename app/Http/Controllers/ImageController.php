@@ -24,7 +24,7 @@ class ImageController extends Controller
         $image = $manager->read($imagen);
 
         // resize image proportionally to 300px width
-        $image->scale(600, 600);
+        $image->resize(1000, 1000);
 
         // save modified image in new format 
         $image->save($path);

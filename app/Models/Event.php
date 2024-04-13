@@ -15,6 +15,21 @@ class Event extends Model
         "description",
         "places",
         "date",
-        
+        "availables",
+        "place_id",
+        "organizer_id",
+        "parking_id",
     ];
+
+    public function organizer() {
+        return $this->belongsTo(Organizer::class);
+    }
+
+    public function place() {
+        return $this->belongsTo(Place::class);
+    }
+
+    public function parking() {
+        return $this->belongsTo(Parking::class);
+    }
 }

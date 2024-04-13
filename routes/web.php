@@ -45,6 +45,10 @@ Route::get("/admin/events", [EventController::class, "index"])->name("admin.even
 // Events
 Route::get("/addmin/events/create", [EventController::class, "create"])->name("admin.eventos.create");
 Route::post("/admin/events/create", [EventController::class, "store"])->name("admin.event.store");
+Route::get("/addmin/events/edit/{event:id}", [EventController::class, "edit"])->name("admin.event.edit");
+Route::post("/admin/events/edit", [EventController::class, "pat"])->name("admin.event.pat");
+Route::get("/addmin/events/read/{event:id}", [EventController::class, "read"])->name("admin.event.read");
+Route::post("/admin/events/delete", [EventController::class, "delete"])->name("admin.event.delete");
 
 // Organizers
 Route::get("/admin/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
