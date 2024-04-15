@@ -35,7 +35,7 @@
         Organizadores 
       </span>
     </a>
-    <a href="{{route("admin.organizadores")}}" class="dashboard__enlace ">
+    <a href="{{route("users.index")}}" class="dashboard__enlace ">
       <i class="fa-solid fa-users dashboard__icono"></i>
       <span class="dashboard__menu-texto">
         Usuarios 

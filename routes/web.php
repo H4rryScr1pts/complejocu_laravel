@@ -7,10 +7,11 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\OrganizerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::post("/admin/organizers/create", [OrganizerController::class, "create_sto
 Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class, "edit"])->name("admin.organizadores.edit");
 Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_store"])->name("admin.organizadores.edit.store");
 Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
+
+// Users
+Route::get("admin/users", [UsersController::class, "index"])->name("users.index");
 
 // Parking
 Route::get("/admin/parking", [ParkingController::class, "index"])->name("admin.parking");

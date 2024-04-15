@@ -1,0 +1,27 @@
+@extends('layouts.admin')
+@section('titulo')
+  Usuarios
+@endsection
+@section('admin-content')
+    <h1>Usuarios</h1>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <tr>
+          @foreach ($users as $user)
+            <td>{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->last_name}}</td>
+            <td>{{$user->telephone}}</td>
+            <td>{{$user->email}}</td>
+          @endforeach
+        </tr>
+      </tbody>
+    </table>
+@endsection
