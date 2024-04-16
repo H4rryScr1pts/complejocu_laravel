@@ -1,65 +1,139 @@
-@extends("app")
-<div class="page-header">
-  <div class="logo">
-  <h1>Complejo Cultural</h1></div>
-  <div class="saludo">
-    @auth
-      <p>Hola: <b>{{auth()->user()->name . " " . auth()->user()->last_name}}</b></p>
-      <form action="{{route("logout")}}" method="POST"></div>
-        @csrf
-        <button class="button" type="submit">Cerrar Sesión</button>
-      </form>
-    @endauth
-  </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complejo Cultural</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  /* Primer menú horizontal */
+  .top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    color: #fff;
+    height: 60px;
+    margin:0;
+    padding: 0;
+
+  }
+.content h1{
+    text-align:center;
+}
+  .top-menu .company-name {
+    font-weight: bold;
+    font-size:25px;
+  }
+
+  .top-menu .user-name {
+    text-align: center;
+    flex-grow: 1;
+    font-size:25px;
+    font-weight:bold;
+  }
+
+  .top-menu .logout-button {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight:bold;
+  }
+
+  /* Segundo menú vertical */
+  .side-menu {
+    float: left;
+    width: 100px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    height:auto;
+  }
+
+  .side-menu h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+ 
   
-</div>
-<body class="dashboard">
-  <div class="dashboard__grid">
-    <aside class="dashboard__sidebar">
-  <nav class="dashboard__menu">
-    <a href="{{route("admin")}}" class="dashboard__enlace dashboard__enlace--actual">
-      <i class="fa-solid fa-house dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Inicio
-      </span>
-    </a>
-    <a href="{{route("admin.eventos")}}" class="dashboard__enlace ">
-      <i class="fa-solid fa-calendar dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Eventos
-      </span>
-    </a>
-    <a href="{{route("admin.organizadores")}}" class="dashboard__enlace ">
-      <i class="fa-solid fa-user-tie dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Organizadores 
-      </span>
-    </a>
-    <a href="{{route("users.index")}}" class="dashboard__enlace ">
-      <i class="fa-solid fa-users dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Usuarios 
-      </span>
-    </a>
-    <a href="/admin/perfil" class="dashboard__enlace ">
-      <i class="fa-solid fa-clipboard dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Reportes
-      </span>
-    </a>
-    <a href="/admin/perfil" class="dashboard__enlace ">
-      <i class="fa-solid fa-user dashboard__icono"></i>
-      <span class="dashboard__menu-texto">
-        Perfil
-      </span>
-    </a>
-  </nav>
-</aside> 
+
+  .side-menu ul li {
+    margin-bottom: 80px;
+
+  }
+
+  .side-menu ul li a {
+    text-decoration: none;
+    color: #333;
+font-weight:bold;
+
+   
+  }
+
+  /* Estilos responsivos */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+
+    .side-menu {
+      float: none;
+      width: 100%;
+    }
+    .content {
+    margin-left: 220px; /* Ancho de la barra lateral más un poco de margen */
+    padding: 20px;
+  }
+  .img{
+    align:center;
+  }
+
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Primer menú horizontal -->
+  <div class="top-menu">
+    <div class="company-name">Complejo Cultural</div>
+    <div class="user-name">Hola: Usuario</div>
+    <a href="#" class="logout-button">Cerrar Sesión</a>
   </div>
-  </div>  <h1>
-    @yield('admin-content')
-</h1>
-  <script src="/build/js/bundle.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Segundo menú vertical -->
+  <div class="side-menu">
+    <ul>
+      <!-- Imagenes-->
+      <li><a href="#"><center><img src="build/inicio.png" ><br> Inicio</a></li>
+      <li><a href="#"><Center><img src="eventos.png" ><br> Eventos</a></li>
+      <li><a href="#"><center><img src="..../usuarios.png"><br> Usuarios</a></li>
+      <li><a href="#"><center><img src="perfil.png" ><br> Perfil</a></li>
+    </ul>
+  </div>
+</div>
+<div class="content">
+   <h1> Panel de Administracion</h1><!-- Contenido de la página aquí -->
+  </div>
+</div>
+
 </body>
 </html>
