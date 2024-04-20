@@ -15,7 +15,7 @@
         </div>
         <div>
           <div>
-            <h1>Grafica EA</h1>
+            <canvas id="myChart" width="400" height="400"></canvas>
           </div>
           <div>
             <h1>Grafica EB</h1>

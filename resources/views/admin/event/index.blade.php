@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 @section('titulo')
     Administración de Eventos
@@ -7,8 +8,8 @@
     @if (session("message"))
         <p class="alerta exito">{{session("message")}}</p>
     @endif
-    <div>
-        <a href="{{route("admin.eventos.create")}}">Añadir Evento</a>
+    
+    <button class="my-button">Añadir Evento</button>
     </div>
     <div>
         <table>

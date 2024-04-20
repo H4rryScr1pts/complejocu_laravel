@@ -42,6 +42,9 @@ Route::post('/logout', [LogoutController::class, "store"])->name("logout");
 // Admin
 Route::get("/admin", [AdminController::class, "index"])->name("admin");
 Route::get("/admin/events", [EventController::class, "index"])->name("admin.eventos");
+Route::get("/admin/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
+Route::get("admin/users", [UsersController::class, "index"])->name("users.index");
+Route::get("/admin/parking", [ParkingController::class, "index"])->name("admin.parking");
 
 // Events
 Route::get("/addmin/events/create", [EventController::class, "create"])->name("admin.eventos.create");
@@ -52,7 +55,6 @@ Route::get("/addmin/events/read/{event:id}", [EventController::class, "read"])->
 Route::post("/admin/events/delete", [EventController::class, "delete"])->name("admin.event.delete");
 
 // Organizers
-Route::get("/admin/organizers", [OrganizerController::class, "index"])->name("admin.organizadores");
 Route::get("/admin/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
 Route::post("/admin/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
 Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class, "edit"])->name("admin.organizadores.edit");
@@ -60,10 +62,10 @@ Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_s
 Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
 
 // Users
-Route::get("admin/users", [UsersController::class, "index"])->name("users.index");
+
 
 // Parking
-Route::get("/admin/parking", [ParkingController::class, "index"])->name("admin.parking");
+
 
 // Images
 Route::post("/images", [ImageController::class, "store"])->name("image.store");

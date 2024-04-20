@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Organizer;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -19,6 +20,13 @@ return new class extends Migration
             $table->string("email");
             $table->timestamps();
         });
+
+        Organizer::create([
+            "name" => "Nico",
+            "last_name" => "Fraga",
+            "telephone" => "2217683241",
+            "email" => "nico21fraga@gmail.com"
+        ]);
     }
 
     /**
