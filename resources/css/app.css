@@ -7,6 +7,7 @@ html {
 }
 body {
     margin: 0;
+    background-color: #eee;
 }
 main {
     display: block;
@@ -1768,15 +1769,15 @@ body {
 /* Segundo menú vertical */
 .side-menu {
     float: left;
-    width: 100px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    width: 15rem;
+    background-color: white;
+    padding: 10px;
     height: 100vh;
 }
 
 .side-menu h2 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 .side-menu ul {
@@ -1793,6 +1794,11 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    margin: 0;
+}
+.side-menu ul li img {
+    width: 3.5rem;
+    margin-bottom: -2rem;
 }
 
 /* Estilos responsivos */
@@ -1809,4 +1815,41 @@ body {
         margin-left: 220px; /* Ancho de la barra lateral más un poco de margen */
         padding: 20px;
     }
+}
+
+.admin-secciones {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.admin-sombra {
+    -webkit-box-shadow: 0px 6px 12px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 6px 12px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 12px -1px rgba(0, 0, 0, 0.75);
+}
+
+.admin-intro {
+    width: 45rem;
+}
+
+.admin-intro-element {
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+.graficas {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.grafica {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }

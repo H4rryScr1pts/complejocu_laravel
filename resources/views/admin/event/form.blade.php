@@ -81,8 +81,7 @@
       </option>
       @foreach ($places as $place)
         <option 
-          value="{{$place->id}}" 
-          {{$event->id ? "selected"  : "" }}
+          value="{{$place->id}}"
         >
         {{$place->name}}
         </option>
@@ -99,7 +98,6 @@
       @foreach ($organizers as $organizer)
         <option 
           value="{{$organizer->id}}"
-          {{$event->id ? "selected"  : "" }}
           >
           {{$organizer->name . " " . $organizer->last_name}}
         </option>
@@ -114,7 +112,7 @@
     <option value="0" disabled selected> -- Seleccione -- </option>
     @foreach ($parkings as $parking)
       @if ($parking->availables !== 0)
-        <option value="{{$parking->id}}" {{$event->id ? "selected"  : "" }}>
+        <option value="{{$parking->id}}">
           <div>
             <p>{{$parking->name}}</p>
             <p>| Cajones Disponibles: {{$parking->availables}}</p>

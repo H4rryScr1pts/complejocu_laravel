@@ -9,8 +9,7 @@
         <p class="alerta exito">{{session("message")}}</p>
     @endif
     
-    <button class="my-button">Añadir Evento</button>
-    </div>
+    <a class="my-button" href="{{route("admin.eventos")}}">Añadir Evento</a>
     <div>
         <table>
             <thead>

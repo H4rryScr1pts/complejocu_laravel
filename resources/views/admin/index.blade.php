@@ -3,29 +3,34 @@
     Dashboard
 @endsection
 @section('admin-content')
-    <h1>Panel de Administración</h1>
-    <div>
-        <div>
-          <div>
-            <h1>Eventos</h1>
-          </div>
-          <div>
-            <h2>Organizadores</h2>
-          </div>
-        </div>
-        <div class="graficas">
-          <div>
-            <h1>Estacionamiento A</h1>
-            <canvas id="graficaEstacionamiento1" class="grafica" width="200" height="200"></canvas>
-          </div>
-          <div>
-            <h1>Grafica EB</h1>
-            <canvas id="graficaEstacionamiento2" width="200" height="200"></canvas>
-          </div>
-        </div>
+  <h1>Panel de Administración</h1>
+  <div class="admin-secciones">
+    <div class="admin-intro">
+      <div class="admin-intro-element admin-sombra">
+        <h1>Proximos Eventos</h1>
+        @foreach ($events as $event)
+          <p>{{$event->name . " - " . $event->date}}</p>
+        @endforeach
       </div>
+      <div class="admin-intro-element admin-sombra">
+        <h1>Organizadores</h1>
+        @foreach ($organizers as $organizer)
+          <p>{{$organizer->name . " " . $organizer->last_name}}</p>
+        @endforeach
+      </div>
+    </div>
+    <div class="graficas">
+      <div class="grafica admin-sombra">
+        <h1>Estacionamiento A</h1>
+        <canvas id="graficaEstacionamiento1" class="" width="300" height="300"></canvas>
+      </div>
+      <div class="grafica admin-sombra">
+        <h1>Estacionamiento B</h1>
+        <canvas id="graficaEstacionamiento2" width="300" height="300"></canvas>
+      </div>
+    </div>
+  </div>
 @endsection
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
         fetch('/api/parking')
             .then(response => response.json())
