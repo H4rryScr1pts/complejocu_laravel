@@ -17,6 +17,9 @@
   <title>
     Complejo CU | @yield("titulo")
   </title>
+  @section("style")
+    
+  @endsection
 </head>
 <body>
   @yield('public')

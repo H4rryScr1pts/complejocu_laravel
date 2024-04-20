@@ -1,116 +1,113 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complejo Cultural</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+@extends('app')
+@section("style")
+  <style>
+  .my-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.my-button:hover {
+    background-color: #0056b3;
+}
 
-  .container {
+.container {
     margin: 0 auto;
     padding: 0px;
-  }
+}
 
-  /* Primer menú horizontal */
-  .top-menu {
+/* Primer menú horizontal */
+.top-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: blue;
     color: #fff;
     height: 60px;
-    margin:0;
+    margin: 0;
     padding: 0 10px;
-
-  }
-.content h1{
-    text-align:center;
 }
-  .top-menu .company-name {
+.content h1 {
+    text-align: center;
+}
+.top-menu .company-name {
     font-weight: bold;
-    font-size:25px;
-  }
+    font-size: 25px;
+}
 
-  .top-menu .user-name {
+.top-menu .user-name {
     text-align: center;
     flex-grow: 1;
-    font-size:25px;
-    font-weight:bold;
-  }
+    font-size: 25px;
+    font-weight: bold;
+}
 
-  .top-menu .logout-button {
+.top-menu .logout-button {
     text-decoration: none;
     color: #fff;
     padding: 5px 10px;
     border: 1px solid #fff;
     border-radius: 5px;
-    font-weight:bold;
-  }
+    font-weight: bold;
+}
 
-  /* Segundo menú vertical */
-  .side-menu {
+/* Segundo menú vertical */
+.side-menu {
     float: left;
     width: 100px;
     background-color: #f2f2f2;
     padding: 20px;
-    height:100vh;
-  }
+    height: 100vh;
+}
 
-  .side-menu h2 {
+.side-menu h2 {
     text-align: center;
     margin-bottom: 10px;
-  }
+}
 
-  .side-menu ul {
+.side-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
- 
-  
+}
 
-  .side-menu ul li {
-    margin-bottom: 50px;
+.side-menu ul li {
+    margin-bottom: 20px;
+}
 
-  }
-
-  .side-menu ul li a {
+.side-menu ul li a {
     text-decoration: none;
     color: #333;
-font-weight:bold;
+    font-weight: bold;
+}
 
-   
-  }
-
-  /* Estilos responsivos */
-  @media screen and (max-width: 768px) {
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
     .container {
-      padding: 20px;
+        padding: 20px;
     }
 
     .side-menu {
-      float: none;
-      width: 100%;
+        float: none;
+        width: 100%;
     }
     .content {
-    margin-left: 220px; /* Ancho de la barra lateral más un poco de margen */
-    padding: 20px;
-  }
-  .img{
-    align:center;
-    width: ;
-  }
+        margin-left: 220px; /* Ancho de la barra lateral más un poco de margen */
+        padding: 20px;
+    }
 
   }
+img {
+  aling: center;
+}
+  
 </style>
-</head>
-<body>
-
+@endsection
+@section("admin")
 <div class="container">
   <!-- Primer menú horizontal -->
   <div class="top-menu">
@@ -178,6 +175,4 @@ font-weight:bold;
    @yield("admin-content")<!-- Contenido de la página aquí -->
   </div>
 </div>
-
-</body>
-</html>
+@endsection

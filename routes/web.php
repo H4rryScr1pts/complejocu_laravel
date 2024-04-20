@@ -65,7 +65,7 @@ Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])-
 
 
 // Parking
-
+Route::get("/api/parking", [ParkingController::class, "get"]);
 
 // Images
 Route::post("/images", [ImageController::class, "store"])->name("image.store");
