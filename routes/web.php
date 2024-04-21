@@ -73,13 +73,3 @@ Route::post("/images", [ImageController::class, "store"])->name("image.store");
 
 // Profile
 Route::get("/profile", []);
-
-// Apis
-Route::get("/api/eventos", [ApiController::class, "eventos"]);
-Route::get("/api/evento/{id}", [ApiController::class, "evento"]);
-Route::get("/api/cajones", [ApiController::class, "cajones"]);
-Route::get("/api/cajon/{drawer:id}", [ApiController::class, "getDrawer"]);
-Route::get("/api/usuarios", [ApiController::class, "usuarios"]);
-Route::get("/api/usuario/{user:email}", [ApiController::class, "usuario"]);
-Route::get("/api/estacionamientos", [ApiController::class, "estacionamientos"]);
-Route::get("/api/estacionamiento/{parking:id}", [ApiController::class, "estacionamiento"]);

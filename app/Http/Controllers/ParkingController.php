@@ -12,12 +12,6 @@ class ParkingController extends Controller
         return view("admin.parking.index");
     }
 
-    public function get() {
-        $parkings = Parking::all();
-
-        return response()->json(["parkings" => $parkings]);
-    }
-
     public function getDrawer(Drawer $drawer) {
 
         return response()->json($drawer);

@@ -15,13 +15,4 @@ class UsersController extends Controller
             "page" => "user"
         ]);
     }
-
-    public function get(User $user) {
-        if(!$user) {
-            return response()->json(["respuesta" => "Usuario no encontrado"]);
-        }
-        
-        return response()->json($user);
-       
-    }
 }

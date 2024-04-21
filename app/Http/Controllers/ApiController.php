@@ -30,6 +30,14 @@ class ApiController extends Controller
         return response()->json($drawer);
     }
 
+    public function setDrawer(Request $request) {
+
+        return response()->json([
+            "espuesta"=>"conetcado",
+            "request" => $request
+        ]);
+    }
+
     public function cajones() {
         $cajones = Drawer::all();
 
