@@ -18,7 +18,7 @@ class OrganizerController extends Controller
     public function index() {
         return view("admin.organizer.index", [
             "organizers" => Organizer::all(),
-            "page" => "ogrganizer"
+            "page" => "organizer"
         ]);
     }
 
