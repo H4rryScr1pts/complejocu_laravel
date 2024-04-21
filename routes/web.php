@@ -63,13 +63,8 @@ Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class,
 Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_store"])->name("admin.organizadores.edit.store");
 Route::get("/admin/organizers/delete/{organizer:id}", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
 
-// Users
-
-
-// Parking
-
 // Images
 Route::post("/images", [ImageController::class, "store"])->name("image.store");
 
-// Profile
-Route::get("/profile", []);
+// Reports
+Route::get("/reports", [ParkingController::class, "index"]);

@@ -9,7 +9,16 @@ use Illuminate\Http\Request;
 class ParkingController extends Controller
 {
     public function index() {
-        return view("admin.parking.index");
+        $drawersA = Drawer::where("parking_id", 1)->get();
+        $drawersB = Drawer::where("parking_id", 2)->get();
+
+        return view("admin.parking.index", [
+            "drawers" => response()->json([
+                "drawersA" => $drawersA,
+                "drawersB" => $drawersB,
+            ]),
+            "page" => "report"
+        ]);
     }
 
     public function getDrawer(Drawer $drawer) {

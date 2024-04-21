@@ -32,7 +32,7 @@
   </div>
 @endsection
       <script>
-        fetch('/api/parking')
+        fetch('/api/estacionamientos')
             .then(response => response.json())
             .then(data => {
               try {
