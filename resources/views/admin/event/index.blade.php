@@ -1,55 +1,59 @@
-
 @extends('layouts.admin')
 @section('titulo')
     Administración de Eventos
 @endsection
 @section('admin-content')
-    <h1>Eventos</h1>
-    @if (session("message"))
-        <p class="alerta exito">{{session("message")}}</p>
-    @endif
-    
-    <a class="my-button" href="{{route("admin.eventos")}}">Añadir Evento</a>
-    <div>
-        <table>
+    <div class="admin-container">
+        <h1>Eventos</h1>
+        <div>
+            <a class="admin-button" href="{{route("admin.eventos.create")}}">Añadir Evento</a>
+        </div>
+        @if (session("message"))
+            <p class="alerta exito">{{session("message")}}</p>
+        @endif
+        @if (session("message-edit"))
+            <p class="alerta exito">{{session("message-edit")}}</p>
+        @endif
+        @if (session("message-delete"))
+            <p class="alerta exito">{{session("message-delete")}}</p>
+        @endif
+        @if ($events)
+        <table class="table admin-sombra">
             <thead>
                 <th>ID</th>
-                <th>Evento</th>
-                <th>Cupo</th>
+                <th>Nombre</th>
                 <th>Fecha</th>
+                <th>Cupo</th>
                 <th>Lugar</th>
-                <th>Disponibles</th>
                 <th>Organizador</th>
-                <th>Estacionamiento</th>
+                <th>Estacionamento</th>
                 <th>Acciones</th>
             </thead>
             <tbody>
-                <tr>
-                    @foreach ($events as $event)
+                @foreach ($events as $event)
+                    <tr>
                         <td>{{$event->id}}</td>
                         <td>{{$event->name}}</td>
-                        <td>{{$event->places}}</td>
                         <td>{{$event->date}}</td>
+                        <td>{{$event->places}}</td>
                         <td>{{$event->place->name}}</td>
-                        <td>{{$event->availables}}</td>
-                        <td>{{$event->organizer->name . " " . $event->organizer->last_name}}</td>
                         <td>{{$event->parking->name}}</td>
-                        <td>
-                           <div>
-                               <div>
-                                    <a href="{{route("admin.event.read", $event->id)}}">Visualizar</a>
-                                    <a href="{{route("admin.event.edit", $event->id)}}">Editar</a>
-                               </div>
-                                <form action="{{route("admin.event.delete")}}" method="POST">
-                                    @csrf
-                                    <input type="hidden" value="{{$event->id}}" name="id">
-                                    <input type="submit" value="Eliminar">
-                                </form>
-                           </div>
+                        <td>{{$event->organizer->name . " " . $event->organizer->last_name}}</td>
+                        <td class="">
+                            <div class="actions-buttons">
+                                <a href="{{route("admin.event.read", $event->id)}}" class="action-button view-button"><i class="fas fa-eye"></i>Ver</a>
+                                <a class="action-button edit-button" href="{{route("admin.event.edit", $event->id)}}">
+                                    <i class="fas fa-edit"></i>Editar
+                                </a>
+                                <a class="action-button delete-button" href="{{route("admin.event.delete", $event->id)}}">
+                                    <i class="fas fa-trash-alt"></i>Eliminar
+                                <a>
+                            </div>
                         </td>
-                    @endforeach
-                </tr>
-            </tbody>    
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
+    @endif
 @endsection

@@ -9,15 +9,6 @@
     <p>Somos una empresa dedicada a la creación y gestión de eventos libres para nuestra comunidad</p>
 </div>
 @include('public.icons')
-<div class="index-eventos">
-    <div class="index-cabecera">
-      <h1>Eventos</h1>
-      <h2>¡Acompañanos en nuestros próximos eventos!</h2>
-      <div class="boton-guardar">
-        <a href="{{route("events")}}" class="boton-azul">Ver todos los eventos</a>
-      </div>
-    </div>
-</div>
 <div class="index-contacto">
     <div class="index-contacto-texto">
       <p>Contáctanos y organiza el evento de tus sueños</p>

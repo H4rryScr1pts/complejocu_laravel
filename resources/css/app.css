@@ -1768,11 +1768,12 @@ body {
 
 /* Segundo menú vertical */
 .side-menu {
+    overflow: hidden;
     float: left;
     width: 15rem;
-    background-color: white;
+    background-color: rgb(37, 35, 35);
     padding: 10px;
-    height: 100vh;
+    height: 150vh;
 }
 
 .side-menu h2 {
@@ -1787,17 +1788,33 @@ body {
 }
 
 .side-menu ul li {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.side-menu ul li:hover {
+    background-color: rgb(75, 65, 65);
 }
 
 .side-menu ul li a {
     text-decoration: none;
-    color: #333;
+    color: #e7e6e68c;
     font-weight: bold;
+    text-transform: uppercase;
     margin: 0;
+    font-size: 1.2rem;
 }
+
+.side-menu ul li.active {
+    background-color: rgb(75, 65, 65);
+}
+
+.side-menu ul li a.active {
+    color: #e7e6e6;
+}
+
 .side-menu ul li img {
-    width: 3.5rem;
+    width: 3rem;
     margin-bottom: -2rem;
 }
 
@@ -1818,6 +1835,7 @@ body {
 }
 
 .admin-secciones {
+    overflow: scroll;
     display: flex;
     align-items: center;
     padding: 3rem;
@@ -1852,4 +1870,150 @@ body {
     background-color: white;
     padding: 1rem;
     border-radius: 0.5rem;
+}
+
+.admin-container {
+    padding: 3rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.admin-button {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+
+.admin-button:hover {
+    background-color: #0a54a3;
+}
+
+.admin-form {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.admin-form-event {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.admin-forms {
+    display: flex;
+}
+
+.form-dropzone {
+    margin-top: 5rem;
+    height: 30rem;
+    width: 50rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+fieldset legend {
+    font-size: 2rem;
+}
+
+.textarea {
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.3rem;
+    border: 0.5rem solid #dbd3d3;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 5rem;
+    border-spacing: 0;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+td {
+    font-size: 16px;
+}
+
+.actions-buttons {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.action-button {
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.view-button {
+    background-color: #007bff;
+}
+
+.edit-button {
+    background-color: #28a745;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.action-button i {
+    margin-right: 0px;
+}
+
+.read-content {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.read-img {
+    margin: 0 auto;
+    width: 50rem;
+}
+
+i {
+    font-size: 3rem;
 }

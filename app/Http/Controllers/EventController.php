@@ -19,7 +19,8 @@ class EventController extends Controller
         $events = Event::with("organizer", "place", "parking")->get();
 
         return view("admin.event.index", [
-            "events" => $events
+            "events" => $events,
+            "page" => "event"
         ]);
     }
 
@@ -35,7 +36,8 @@ class EventController extends Controller
         return view("admin.event.create", [
             "organizers" => Organizer::all(),
             "places" => Place::all(),
-            "parkings" => Parking::all()
+            "parkings" => Parking::all(),
+            "page" => "event"
         ]);
     }
 
@@ -72,7 +74,8 @@ class EventController extends Controller
             "event" => $record,
             "organizers" => Organizer::all(),
             "places" => Place::all(),
-            "parkings" => Parking::all()
+            "parkings" => Parking::all(),
+            "page" => "event"
         ]);
     }
 
@@ -105,14 +108,18 @@ class EventController extends Controller
          return redirect()->route("admin.eventos")->with("message", "Registro Actualizado Correctamente");
     }
 
-    public function delete(Request $request) {
-        $event = Event::find($request->id);
+    public function delete(Event $event) {
         $image_path = public_path("/uploads/" . $event->picture);
-
         Storage::delete($image_path);
+        
         $event->delete();
 
         return redirect()->route("admin.eventos")->with("message", "Evento Eliminado Correctamente");
+    }
+
+    public function all() {
+        $eventos = Event::all();
+        return response()->json($eventos);
     }
 }
 

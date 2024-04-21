@@ -11,53 +11,45 @@
   <div class="side-menu">
 <ul>
   <!-- Imagenes-->
-  <li>
+  <li class="{{$page === 'home' ? 'active' : ''}}">
     <a 
-      href="{{route("admin")}}">
+      href="{{route("admin")}}" class="{{$page == 'home' ? 'active' : ''}}">
       <center>
-        <img src="{{asset("build/img/inicio.png")}}" >
+        <i class="fa fa-home"></i>
         <br> Inicio
     </a>
   </li>
-  <li>
+  <li class="{{$page === 'event' ? 'active' : ''}}">
     <a 
-      href="{{route("admin.eventos")}}">
+      href="{{route("admin.eventos")}}" class="{{$page === 'event' ? 'active' : ''}}">
           <Center>
-            <img src="{{asset("build/img/eventos.png")}}" >
+            <i class="fa-solid fa-calendar"></i>
             <br> Eventos
       </a>
     </li>
-      <li>
+      <li class="{{$page === 'organizer' ? 'active' : ''}}">
         <a 
-          href="{{route("admin.organizadores")}}">
+          href="{{route("admin.organizadores")}}" class="{{$page === 'organizer' ? 'active' : ''}}">
           <center>
-            <img src="{{asset("build/img/organizadores.png")}}">
+            <i class="fa-solid fa-user-tie"></i>
             <br> Organizadores
         </a>
       </li>
-      <li>
+      <li class="{{$page === 'user' ? 'active' : ''}}">
         <a 
-          href="{{route("users.index")}}">
+          href="{{route("users.index")}}" class="{{$page === 'user' ? 'active' : ''}}">
           
           <center>
-            <img src="{{asset("build/img/usuarios.png")}}">
+            <i class="fa-solid fa-users"></i>
             <br> Usuarios
         </a>
       </li>
-      <li>
+      <li class="{{$page === 'report' ? 'active' : ''}}">
         <a 
-          href="{{route("admin.parking")}}">
+          href="{{route("admin.parking")}}" class="{{$page === 'report' ? 'active' : ''}}">
           <center>
-            <img src="{{asset("build/img/reportes.png")}}" >
+            <i class="fa-solid fa-clipboard"></i>
             <br> Reportes
-        </a>
-      </li>
-      <li>
-        <a 
-          href="{{route("admin.parking")}}">
-          <center>
-            <img src="{{asset("build/img/perfil.png")}}" >
-            <br> Perfil
         </a>
       </li>
     </ul>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -19,10 +20,19 @@ class PagesController extends Controller
     }
 
     public function events() {
-        return view("public.events");
+        $events = Event::all();
+        return view("public.events", [
+            "events" => $events
+        ]);
     }
 
     public function location() {
         return view("public.location");
+    }
+
+    public function event(Event $event) {
+        return view("public.event", [
+            "event" => $event
+        ]);
     }
 }

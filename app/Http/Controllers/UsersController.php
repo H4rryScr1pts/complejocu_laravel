@@ -11,7 +11,17 @@ class UsersController extends Controller
         $users = User::all();
 
         return view("admin.users.index", [
-            "users" => $users
+            "users" => $users,
+            "page" => "user"
         ]);
+    }
+
+    public function get(User $user) {
+        if(!$user) {
+            return response()->json(["respuesta" => "Usuario no encontrado"]);
+        }
+        
+        return response()->json($user);
+       
     }
 }

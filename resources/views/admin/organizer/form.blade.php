@@ -1,5 +1,5 @@
 <input type="hidden" name="id" value="{{$organizer->id ?? ""}}">
-<div>
+<div class="campo">
   <label for="name">Nombre</label>
   @error("name")
     <p class="alerta error">{{$message}}</p>
@@ -11,7 +11,7 @@
     placeholder="Nombre del Organizador" 
     value="{{$organizer->name ?? old("name")}}">
 </div>
-<div>
+<div class="campo">
   <label for="last_name">Apellido</label>
   @error("last_name")
     <p class="alerta error">{{$message}}</p>
@@ -23,7 +23,7 @@
     placeholder="Apllido del Organizador" 
     value="{{$organizer->last_name ?? old("last_name")}}">
 </div>
-<div>
+<div class="campo">
   <label for="telephone">Telefono</label>
   @error("telephone")
     <p class="alerta error">{{$message}}</p>
@@ -35,7 +35,7 @@
     placeholder="No° de teléfono del Organizador" 
     value="{{$organizer->telephone ?? old("telephone")}}">
 </div>
-<div>
+<div class="campo">
   <label for="email">Correo Electrónico</label>
   @error("email")
     <p class="alerta error">{{$message}}</p>

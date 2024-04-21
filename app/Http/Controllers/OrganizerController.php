@@ -17,7 +17,8 @@ class OrganizerController extends Controller
     /** Renderizar página principal y pasar infromación de los organizadores */
     public function index() {
         return view("admin.organizer.index", [
-            "organizers" => Organizer::all()
+            "organizers" => Organizer::all(),
+            "page" => "ogrganizer"
         ]);
     }
 
@@ -25,7 +26,9 @@ class OrganizerController extends Controller
      * 
      */
     public function create() {
-        return view("admin.organizer.create");
+        return view("admin.organizer.create", [
+            "page" => "ogrganizer"
+        ]);
     }
 
     /** Crear un Organizador
@@ -52,7 +55,8 @@ class OrganizerController extends Controller
     /** Renderizar la vista edición de un organizador */
     public function edit(Organizer $organizer) {
         return view("admin.organizer.edit", [
-            "organizer" => $organizer
+            "organizer" => $organizer,
+            "page" => "ogrganizer"
         ]);
     }
 
@@ -81,9 +85,8 @@ class OrganizerController extends Controller
     /** Eliminar un organizador obteniendolo a través de su id 
      * Tras eliminr el id, se redirecciona al usuario a la sección de organizadores
     */
-    public function delete(Request $request) {
+    public function delete(Organizer $organizer) {
         // Obtener el organizador y eliminarlo
-        $organizer = Organizer::find($request->id);
         $organizer->delete();
 
         // Redirección a la sección de organizadores

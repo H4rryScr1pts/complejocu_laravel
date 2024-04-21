@@ -29,6 +29,7 @@ Route::get('/', [PagesController::class, "index"])->name("/");
 Route::get('/about', [PagesController::class, "about"])->name("about");
 Route::get('/services', [PagesController::class, "services"])->name("services");
 Route::get('/events', [PagesController::class, "events"])->name("events");
+Route::get('/event/{event:id}', [PagesController::class, "event"])->name("event");
 Route::get('/location', [PagesController::class, "location"])->name("location");
 Route::get('/contact', [PagesController::class, "aboud"])->name("contact");
 
@@ -52,23 +53,28 @@ Route::post("/admin/events/create", [EventController::class, "store"])->name("ad
 Route::get("/addmin/events/edit/{event:id}", [EventController::class, "edit"])->name("admin.event.edit");
 Route::post("/admin/events/edit", [EventController::class, "pat"])->name("admin.event.pat");
 Route::get("/addmin/events/read/{event:id}", [EventController::class, "read"])->name("admin.event.read");
-Route::post("/admin/events/delete", [EventController::class, "delete"])->name("admin.event.delete");
+Route::get("/admin/events/delete/{event:id}", [EventController::class, "delete"])->name("admin.event.delete");
 
 // Organizers
 Route::get("/admin/organizers/create", [OrganizerController::class, "create"])->name("admin.organizadores.create");
 Route::post("/admin/organizers/create", [OrganizerController::class, "create_store"])->name("admin.organizadores.create");
 Route::get("/admin/organizers/edit/{organizer:id}", [OrganizerController::class, "edit"])->name("admin.organizadores.edit");
 Route::post("/admin/organizers/edit/store", [OrganizerController::class, "edit_store"])->name("admin.organizadores.edit.store");
-Route::post("/admin/organizers/delete", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
+Route::get("/admin/organizers/delete/{organizer:id}", [OrganizerController::class, "delete"])->name("admin.organizadores.delete");
 
 // Users
 
 
 // Parking
-Route::get("/api/parking", [ParkingController::class, "get"]);
 
 // Images
 Route::post("/images", [ImageController::class, "store"])->name("image.store");
 
 // Profile
 Route::get("/profile", []);
+
+// Apis
+Route::get("/api/parking", [ParkingController::class, "get"]);
+Route::get("/api/user/{user:email}", [UsersController::class, "get"]);
+Route::get("/api/eventos", [EventController::class, "all"]);
+Route::get("/api/cajon/{drawer:id}", [ParkingController::class, "getDrawer"]);

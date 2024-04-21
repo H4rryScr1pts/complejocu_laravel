@@ -17,6 +17,7 @@ class AdminController extends Controller
         return view("admin.index", [
             "events" => $events,
             "organizers" => $organizers,
+            "page" => "home"
         ]);
     }
 }

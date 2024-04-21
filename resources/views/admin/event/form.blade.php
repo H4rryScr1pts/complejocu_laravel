@@ -1,7 +1,7 @@
 <input type="hidden" name="id" value="{{$event->id ?? ""}}">
 <fieldset>
   <legend>Datos del Evento</legend>
-  <div>
+  <div class="campo">
     @error("picture")
       <p class="alerta error">La imágen del evento es requerida</p>
     @enderror
@@ -17,12 +17,13 @@
       value="{{$event->name ?? old("name")}}"
     >
   </div>
-  <div>
+  <div class="campo">
     <label for="descripction">Descripción del Evento</label>
     @error("description")
       <p class="alerta error">"{{$message}}"</p>
     @enderror
     <textarea 
+      class="textarea"
       name="description" 
       id="description" 
       cols="30" 
@@ -31,14 +32,14 @@
     {{$event->description ?? old("description")}}
     </textarea>
   </div>
-  <div>
+  <div class="campo">
     <input 
       type="hidden" 
       name="picture" 
       value="{{$event->picture ?? old("picture")}}"
     >
   </div>
-  <div>
+  <div class="campo">
     <label for="places">Cantidad de lugares</label>
     @error("places")
       <p class="alerta error">{{$message}}</p>
@@ -51,7 +52,7 @@
       value="{{$event->places ?? old("places")}}"
     >
   </div>
-  <div>
+  <div class="campo">
     <label for="date">Fecha del Evento</label>
     @error("date")
       <p class="alerta error">{{$message}}</p>
@@ -66,7 +67,7 @@
 </fieldset>
 <fieldset>
   <legend>Datos Adicionales</legend>
-  <div class="">
+  <div class="campo">
     <label for="">Lugar donde se ralizará el Evento</label>
     @error("place_id")
       <p class="alerta error">{{$message}}</p>
@@ -88,8 +89,8 @@
       @endforeach
     </select>
   </div>
-  <div class="">
-    <label for="">Organizador Encargado del Evento</label>
+  <div class="campo">
+    <label for="organizer_id">Organizador Encargado del Evento</label>
     @error("organizer_id")
       <p class="alerta error">{{$message}}</p>
     @enderror
@@ -107,25 +108,27 @@
 </fieldset>
 <fieldset>
   <legend>Datos de Estacionamiento (Opcional)</legend>
-  <label for="parking_id">Seleccionar Estacionamiento</label>
-  <select name="parking_id" id="parking_id">
-    <option value="0" disabled selected> -- Seleccione -- </option>
-    @foreach ($parkings as $parking)
-      @if ($parking->availables !== 0)
-        <option value="{{$parking->id}}">
-          <div>
+  <div class="campo">
+    <label for="parking_id">Seleccionar Estacionamiento</label>
+    <select name="parking_id" id="parking_id">
+      <option value="0" disabled selected> -- Seleccione -- </option>
+      @foreach ($parkings as $parking)
+        @if ($parking->availables !== 0)
+          <option value="{{$parking->id}}">
+            <div>
+              <p>{{$parking->name}}</p>
+              <p>| Cajones Disponibles: {{$parking->availables}}</p>
+            </div>
+          </option>
+        @else
+          <option value="0" disabled>
             <p>{{$parking->name}}</p>
-            <p>| Cajones Disponibles: {{$parking->availables}}</p>
-          </div>
-        </option>
-      @else
-        <option value="0" disabled>
-          <p>{{$parking->name}}</p>
-          <p>| Sin Cajones Disponibles</p>
-        </option>
-      @endif
-    @endforeach
-  </select>
+            <p>| Sin Cajones Disponibles</p>
+          </option>
+        @endif
+      @endforeach
+    </select>
+  </div>
   <div class="place-selector">
 
   </div>
