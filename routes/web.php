@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
@@ -74,7 +75,11 @@ Route::post("/images", [ImageController::class, "store"])->name("image.store");
 Route::get("/profile", []);
 
 // Apis
-Route::get("/api/parking", [ParkingController::class, "get"]);
-Route::get("/api/user/{user:email}", [UsersController::class, "get"]);
-Route::get("/api/eventos", [EventController::class, "all"]);
-Route::get("/api/cajon/{drawer:id}", [ParkingController::class, "getDrawer"]);
+Route::get("/api/eventos", [ApiController::class, "eventos"]);
+Route::get("/api/evento/{id}", [ApiController::class, "evento"]);
+Route::get("/api/cajones", [ApiController::class, "cajones"]);
+Route::get("/api/cajon/{drawer:id}", [ApiController::class, "getDrawer"]);
+Route::get("/api/usuarios", [ApiController::class, "usuarios"]);
+Route::get("/api/usuario/{user:email}", [ApiController::class, "usuario"]);
+Route::get("/api/estacionamientos", [ApiController::class, "estacionamientos"]);
+Route::get("/api/estacionamiento/{parking:id}", [ApiController::class, "estacionamiento"]);

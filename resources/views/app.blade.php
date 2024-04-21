@@ -12,6 +12,7 @@
   <link rel="website icon" href="/build/img/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {{-- <link rel="stylesheet" href="{{asset("css/app.css")}}"> --}}
+  <link rel="stylesheet" href="{{asset("build/assets/app-1H3hp9Nt.css")}}"/>
   @vite("resources/css/app.css")
   @vite("resources/js/app.js")
   <title>
@@ -25,5 +26,6 @@
   @yield('public')
   @yield('admin')
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{asset("build/assets/app-B0QLVBv4.js")}}"></script>
 </body>
 </html>
