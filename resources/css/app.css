@@ -1184,7 +1184,7 @@ body {
     color: #fff;
 }
 .inicio-header {
-    background-image: url("/public/build/img/lugar3.jpg");
+    background-image: url("/public/img/lugar3.jpg");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1381,7 +1381,7 @@ body {
     text-align: center;
 }
 .index-contacto {
-    background-image: url("/public/build/img/lugar4.jpg");
+    background-image: url("/public/img/lugar4.jpg");
     background-position: bottom;
     background-size: cover;
     height: 60rem;
