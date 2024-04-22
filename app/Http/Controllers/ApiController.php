@@ -25,17 +25,31 @@ class ApiController extends Controller
         return response()->json($event);
     }
 
-    public function getDrawer(Drawer $drawer) {
+    public function getDrawer($id) {
+        $cajon = Drawer::find($id);
 
-        return response()->json($drawer);
+        if ($cajon) {
+            return response()->json([
+                'id' => $cajon->id,
+                'estado' => $cajon->estatus
+            ]);
+        } else {
+            return response()->json(['error' => 'Cajón no encontrado'], 404);
+        }
     }
 
     public function setDrawer(Request $request) {
+         $datos = $request->json()->all();
 
-        return response()->json([
-            "espuesta"=>"conetcado",
-            "request" => $request
-        ]);
+        // Actualizar el estado del cajón en la base de datos
+        $cajon = Drawer::find($datos['id']);
+        if ($cajon) {
+            $cajon->estatus = $datos['estado'];
+            $cajon->save();
+            return response()->json(['mensaje' => 'Datos del cajón actualizados correctamente']);
+        } else {
+            return response()->json(['error' => 'Cajón no encontrado'], 404);
+        }
     }
 
     public function cajones() {

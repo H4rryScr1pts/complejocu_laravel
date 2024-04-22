@@ -13,10 +13,8 @@ class ParkingController extends Controller
         $drawersB = Drawer::where("parking_id", 2)->get();
 
         return view("admin.parking.index", [
-            "drawers" => response()->json([
-                "drawersA" => $drawersA,
-                "drawersB" => $drawersB,
-            ]),
+            "drawersA" => $drawersA,
+            "drawersB" => $drawersB,
             "page" => "report"
         ]);
     }

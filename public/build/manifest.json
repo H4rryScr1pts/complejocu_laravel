@@ -1,14 +1,6 @@
 {
-  "public/build/img/lugar3.jpg": {
-    "file": "assets/lugar3-BdFyi_L_.jpg",
-    "src": "public/build/img/lugar3.jpg"
-  },
-  "public/build/img/lugar4.jpg": {
-    "file": "assets/lugar4-CebquzHS.jpg",
-    "src": "public/build/img/lugar4.jpg"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-1H3hp9Nt.css",
+    "file": "assets/app-FZoSTnfs.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
