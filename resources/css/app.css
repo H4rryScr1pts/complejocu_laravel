@@ -1773,7 +1773,7 @@ body {
     width: 15rem;
     background-color: rgb(37, 35, 35);
     padding: 10px;
-    height: 150vh;
+    height: 190vh;
 }
 
 .side-menu h2 {
@@ -1788,7 +1788,7 @@ body {
 }
 
 .side-menu ul li {
-    margin-bottom: 5px;
+    margin-bottom: 1rem;
     padding: 1rem 0.5rem;
     border-radius: 0.5rem;
 }
